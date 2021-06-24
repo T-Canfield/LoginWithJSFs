@@ -21,8 +21,6 @@ public class UsersEntity {
         this.userId = userId;
     }
 
-    @Basic
-    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -31,8 +29,6 @@ public class UsersEntity {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -41,8 +37,6 @@ public class UsersEntity {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "role")
     public String getRole() {
         return role;
     }
@@ -63,4 +57,10 @@ public class UsersEntity {
     public int hashCode() {
         return Objects.hash(userId, username, password, role);
     }
+
+
+    public static boolean isAdmin(UsersEntity user) {
+        return user.getRole().equals("admin");
+    }
+
 }

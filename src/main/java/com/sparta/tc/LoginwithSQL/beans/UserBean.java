@@ -25,8 +25,11 @@ public class UserBean {
     }
 
     public String addUser(){
-        if (LoginChecker.isValidUser(user)){
-            return "welcome";
+        String userRole = LoginChecker.isValidUser(user);
+        if (userRole.equals("admin")){
+            return "welcomeAdmin";
+        } else if (userRole.equals("user")){
+            return "welcomeUser";
         } else {
             return "LoginFailed";
         }

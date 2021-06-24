@@ -9,20 +9,22 @@ import java.util.List;
 
 public class LoginChecker {
 
-    public static boolean isValidUser(UsersEntity user) {
+    public static String isValidUser(UsersEntity user) {
         UserRepository userRepository = new UserRepository();
         List<UsersEntity> users = userRepository.getUsers();
-        System.out.println(users);
+        String userRole = "0";
+
         for (UsersEntity userToCheck:
              users) {
-            if(userToCheck.equals(user)){
-                System.out.println(userToCheck.getUsername());
-                return true;
+            if(userToCheck.getUsername().equals(user.getUsername()) && userToCheck.getPassword().equals(user.getPassword())){
+                if(userToCheck.getRole().equals("admin")) {
+                    userRole = "admin";
+                } else {
+                    userRole = "user";
+                }
             }
-
-
-
         }
         return false;
     }
+
 }
