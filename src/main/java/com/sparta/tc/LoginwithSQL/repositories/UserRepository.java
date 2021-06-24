@@ -6,6 +6,7 @@ package com.sparta.tc.LoginwithSQL.repositories;
 import com.sparta.tc.LoginwithSQL.services.DAO;
 import entities.UsersEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {

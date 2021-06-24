@@ -24,7 +24,7 @@ public class LoginChecker {
                 }
             }
         }
-        return false;
+        return userRole;
     }
 
 }

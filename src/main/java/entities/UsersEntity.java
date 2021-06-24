@@ -3,16 +3,21 @@ package entities;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "users", schema = "users")
 public class UsersEntity {
     private Integer userId;
     private String username;
     private String password;
     private String role;
 
-    @Id
-    @Column(name = "userId")
+    public UsersEntity(Integer userId, String username, String password, String role) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    public UsersEntity(){}
+
     public Integer getUserId() {
         return userId;
     }
