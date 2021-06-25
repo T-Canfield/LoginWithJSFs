@@ -8,12 +8,7 @@
 <f:view>
     <ui:composition template="/WEB-INF/templates/template.xhtml">
         <ui:define name="content">
-            <h:outputLabel><strong>Welcome Admin: #{userBean.user.username}!</strong></h:outputLabel>
-            <h:form>
-                <h:outputLabel value="Enter a username to delete"/>
-                <h:inputText value="#{userBean.user.username}"/>
-                <h:commandButton value="Delete" action="#{userBean.deleteUser}"/>
-            </h:form>
+            <h:outputLabel><strong>Successfully Deleted #{userBean.user.username}!</strong></h:outputLabel>
         </ui:define>
     </ui:composition>
 </f:view>
